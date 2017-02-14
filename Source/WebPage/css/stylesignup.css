@@ -1,0 +1,28 @@
+/*in sign up page :: style of header*/
+
+.header {
+  background-color: inherit;
+}
+
+.nav li {
+  color: #000000;
+  display: inline;
+  font-family: 'Pangolin', cursive;
+  font-size: 18px;
+  margin-right: 25px;
+  list-style-type: none;
+  text-transform: uppercase;
+}
+
+.btn-submit{
+  margin: auto;
+}
+
+#signup {
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+  font-style:normal;
+}
+
+#signup label {
+  font-size: 18px;
+}

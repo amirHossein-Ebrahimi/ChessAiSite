@@ -1,0 +1,21 @@
+<htm</htm>
+<style>
+  table tr:nth-child(2n) td:nth-child(2n+1) {
+    background-color: darkkhaki;
+  }
+
+  table tr:nth-child(2n+1) td:nth-child(2n) {
+    background-color:chocolate;
+  }
+</style>
+{% load static %}
+{% load index %}
+<table>
+  {% for i in "01234567" %}
+  <tr>
+    {% for j in "01234567" %}
+      <td>{{ state|index:i|index:j }}</td>
+    {% endfor %}
+  </tr>
+  {%  endfor %}
+</table>

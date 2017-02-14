@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>active</title>
+</head>
+<body>
+<h1>Thanks :D</h1>
+<!-- id pk -->
+<h2>your id is :{{ user.pk }}</h2>
+<div id="links" style="margin-left:830px;">
+  <a href="/ChessAiSite_app/login/" style="font-family: 'Pangolin', cursive;">login</a>
+  <a href="/ChessAiSite_app/signup/" style="font-family: 'Pangolin', cursive;">Signup</a>
+  <a href="/ChessAiSite_app/" style="font-family: 'Pangolin', cursive;">Home</a>
+</div>
+{% if error %}
+<p>{{ reeor }}</p>
+{% endif %}
+</body>
+</html>

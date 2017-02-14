@@ -1,7 +1,6 @@
 import random
 
 
-#      user to activation code
 def change_UTA_code(sun):
     sum = 0
     for letter_index in range(len(sun)):
@@ -12,7 +11,7 @@ def change_UTA_code(sun):
         [random.SystemRandom().choice('abcdefghijklmnopqrstuvwxyz0123456789!@#$%^*(-_=+)') for i in range(5)])
     current_length = 7 - len(repr(sum))
     result = SECRET_KEY[(7 - current_length + 1):] + "$" + repr(sum) + "=*2" + SECRET_KEY2
-    return result
+    print(result)
 
 
 #      activation code to user
@@ -33,15 +32,4 @@ def change_ATU_code(sun, code):
         return False
 
 
-str = input("enter your text: ")
-print(change_UTA_code(str))
-
-active = input("input your activation code: ")
-
-if change_ATU_code(str, active):
-    print("Dear " + str + "!")
-    print("Thank you for registriation")
-else:
-    print("Purchase the app please!")
-
-finish = input()
+change_UTA_code("b")

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>info_signup</title>
+  <style>
+    #links {
+      text-align: left;
+      text-decoration: none;
+      color: darkorange;
+    }
+    #links hover {
+      color: firebrick;
+    }
+  </style>
+</head>
+<body>
+<div id="links">
+  <a href="/ChessAiSite_app/login/">login</a>
+  <a href="/ChessAiSite_app/signup/">Signup</a>
+  <a href="/ChessAiSite_app/">Home</a>
+</div>
+<form action="{% url 'active' %}" method="post">
+  {% csrf_token %}
+  <h3>{{ user.username }} please enter your Activation code we have emailed you:</h3>
+  <input type="text" name="username" required autocomplete="off" placeholder="Username">
+  <input type="text" name="activationcode" required autocomplete="off" placeholder="Activation code">
+  <input type="submit" value="Check"><br>
+  <p style="color :lightslategray">this high security code is for making sure you are not a bot :D</p>
+</form>
+{% if error %}
+<p>{{ reeor }}</p>
+{% endif %}
+</body>
+</html>

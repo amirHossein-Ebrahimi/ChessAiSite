@@ -1,0 +1,50 @@
+/*font-family: 'Pangolin', cursive;*/
+
+/*font-family: 'Barrio', cursive;*/
+
+/*font-family: 'Yanone Kaffeesatz', sans-serif;*/
+
+.header {
+  background-image: url("http://blog.hdwallsource.com/wp-content/uploads/2016/02/chess-wallpaper-23570-24223-hd-wallpapers-680x425.jpg");
+  background-position: center center;
+  background-size: cover;
+  height: 850px;
+  width: 100%;
+}
+
+#header-text {
+  margin: 0 auto;
+  position: relative;
+  text-align: center;
+  top: 25%;
+  width: 60%;
+  color: white;
+}
+
+#header-text h1 {
+  font-size: 72px;
+  font-family: 'Barrio', cursive;
+  padding-bottom: 25px;
+}
+
+#header-text h2 {
+  font-size: 30px;
+  font-family: 'Pangolin', cursive;
+  color: honeydew;
+  padding-bottom: 15px;
+}
+
+#btn-main {
+  background-color: #333;
+  color: white;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  font-size: 45px;
+  font-weight: bold;
+  text-align: center;
+  padding: 20px 20px 15px 20px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+/
+

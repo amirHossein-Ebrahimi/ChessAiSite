@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Home</title>
+  <style>
+    {%  load static %}
+    body {
+      background-image: url("{% static "chess-header.jpg" %}");
+      background-size: 100%;
+    }
+
+    #btn-main {
+      background-color: #333;
+      color: white;
+      font-family: 'Yanone Kaffeesatz', sans-serif;
+      font-size: 45px;
+      font-weight: bold;
+      text-align: center;
+      padding: 20px 20px 15px 20px;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+
+    a{
+      margin-top: 200px;
+    }
+    #header-text {
+      margin: 0 auto;
+      position: relative;
+      text-align: center;
+      top: 25%;
+      width: 60%;
+      color: white;
+    }
+
+    h1 {
+      margin-top: 100px;
+      color: saddlebrown;
+    }
+  </style>
+</head>
+<body>
+<div id="header-text">
+  <h1>Play Chess Like Never Before</h1><br>
+  <a id="btn-main" href="signup"">Get started</a>
+</div>
+</body>
+</html>

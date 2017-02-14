@@ -1,0 +1,23 @@
+signup.header {
+  background-color: inherit;
+}
+
+.nav li {
+  color: #000000;
+  display: inline;
+  font-family: 'Pangolin', cursive;
+  font-size: 18px;
+  margin-right: 25px;
+  list-style-type: none;
+  text-transform: uppercase;
+}
+
+
+#login {
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  font-style:normal;
+}
+
+#login label {
+  font-size: 18px;
+}

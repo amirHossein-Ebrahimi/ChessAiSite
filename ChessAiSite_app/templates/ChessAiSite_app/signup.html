@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Signup</title>
+  <style>
+    {% load static %}
+    body {
+      background-color: #3ddbb3;;
+    }
+
+    .header {
+      background-color: inherit;
+    }
+
+    .nav li {
+      color: #000000;
+      display: inline;
+      font-family: 'Pangolin', cursive;
+      font-size: 18px;
+      margin-right: 25px;
+      list-style-type: none;
+      text-transform: uppercase;
+    }
+    .form{
+      margin-left:720px;
+    }
+
+    .btn-submit {
+      margin: auto;
+    }
+
+    #signup {
+      font-family: 'Yanone Kaffeesatz', sans-serif;
+      font-style: normal;
+    }
+
+    #signup label {
+      font-size: 18px;
+    }
+
+    #links {
+      margin-left:810px;
+      text-decoration: none;
+      color: darkorange;
+    }
+
+    .warning {
+      color: firebrick;
+    }
+
+    #links hover {
+      color: firebrick;
+    }
+
+  .signuppage {
+    background-color: rgb(247, 171, 7);
+  {#    for browser wich cant suport rgba we add rgb#} background-color: rgba(247, 171, 7, 0.95);
+
+    padding: 20px 20px 15px 20px;
+    margin: 10px 74% 20px 10px;
+  }
+
+  </style>
+</head>
+<body>
+
+<div id="login">
+
+<div class="form">
+  <div>
+    <div id="signup">
+      <h1 style="margin-left:15px;">Sign Up for Free</h1>
+      <img src="{% static "signup-add.png" %}" alt="page" style="width:100px;height:100px; margin-left:100px;">
+      <form class="signuppage" action="{% url 'info_signup' %}" method="post">
+        {% csrf_token %}
+        <div>
+          <div>
+            <label>
+              User name :
+            </label><br>
+            <input type="text" name="username"  autocomplete="off"/>
+          </div>
+        </div>
+        <div>
+          <label>
+            Email Address  :
+          </label><br>
+          <input type="email" name="email" required autocomplete="on"/>
+        </div>
+        <div>
+          <label>
+            Set A Password :
+          </label><br>
+          <input type="password" name="password"  autocomplete="off" />
+        </div>
+        <br>
+        <button type="submit"/>
+        Get Start</button>
+      </form>
+    </div>
+  </div><!-- tab-content -->
+</div> <!-- /form -->
+
+<p style="margin-left:610px;"><span class="warning">WARNING:</span> Please take care to remember your passsword.<br>Profiles contain no personal
+  information which can be used <br> to prove an account belongs to you.If you forget your password <br>then account recovery
+  is not possible.</p>
+<br>
+<div id="links">
+  <a href="/ChessAiSite_app/login/" style="font-family: 'Pangolin', cursive;">login</a>
+  <a href="/ChessAiSite_app/signup/" style="font-family: 'Pangolin', cursive;">Signup</a>
+  <a href="/ChessAiSite_app/" style="font-family: 'Pangolin', cursive;">Home</a>
+</div>
+{% if error %}<h3>{{ error }}</h3>{% endif %}
+</body>
+</html>

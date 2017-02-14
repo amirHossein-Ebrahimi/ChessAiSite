@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Game board</title>
+<style>
+  .piece {
+    width: 70px;
+    height: 70px;
+  }
+
+  table {
+    align-self: center;
+    border-collapse: collapse;
+  }
+
+  table, tا, td {
+    border: 3px solid black;
+    height: 80px;
+    width: 80px;
+    padding: 5px;
+    text-align: center;
+  }
+
+  {# Dark color#}
+  table tr:nth-child(2n) td:nth-child(2n+1) {
+    background-color: saddlebrown;
+  }
+
+  table tr:nth-child(2n+1) td:nth-child(2n) {
+    background-color: saddlebrown;
+  }
+
+  {# Light color#}
+  table tr:nth-child(2n) td:nth-child(2n) {
+    background-color: burlywood;
+  }
+
+  table tr:nth-child(2n+1) td:nth-child(2n+1) {
+    background-color: burlywood;
+  }
+
+  #table {
+    position:absolute;
+    right : 50px;
+    margin-left: 30%;
+  }
+
+  .move {
+    text-align: center
+    max-width: 150px;
+  }
+
+  #links hover {
+    color: firebrick;
+  }
+
+</style>
+</head>
+<body>
+{% load index %}
+{% load static %}
+<div id="links">
+  <a href="/ChessAiSite_app/login/" style="font-family: 'Pangolin', cursive;">login</a>
+  <a href="/ChessAiSite_app/signup/" style="font-family: 'Pangolin', cursive;">Signup</a>
+  <a href="/ChessAiSite_app/" style="font-family: 'Pangolin', cursive;">Home</a>
+</div>
+<table id="table">
+  {% for i in "012345678" %}
+  <tr>
+    {% for j in "012345678" %}
+    <td><img class="piece" src="{% static state|index:i|index:j %}"></td>
+    {% endfor %}
+  </tr>
+  {% endfor %}
+</table>
+<br>
+
+<form class="move" action="{% url 'move' %}" method="post">
+  {% csrf_token %}
+  <h3>Hint: </h3>
+  <p>b1,c3{{user.username}}</p><br>
+  <input type="hidden" name="username" value="{{user.username}}">
+  <input type="text" name="move" maxlength="5" placeholder="a5,a7"> </input>
+  <input type="submit" value="Move">
+</form>
+<table method="get">
+  <tr>
+    <td style="background-color: gray">
+      <p>Thu 18:22:32</p>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'ChessAiSite_app',
 ]
 
-MIDDLEWARE = [
+MIDDLEWARE_CLASSES = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -118,5 +118,19 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
+
+
+# line 124 is fixed for ubuntu we change windows part
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+MAILER_EMAIL_BACKEND = EMAIL_BACKEND
+EMAIL_HOST='smtp.gmail.com'
+EMAIL_PORT=465
+# we turn on google accsess fo rless sucured app
+EMAIL_HOST_USER="proje.term1.5"
+EMAIL_HOST_PASSWORD="projedjango"
+DEFAULT_EMAIL_FROM = 'proje.term1.5@gmail.com'
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+
+EMAIL_USE_SSL = True
 
 STATIC_URL = '/static/'

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login</title>
+</head>
+<style>
+  {%  load static %}
+  body {
+    background-color: #3ddbb3;;
+  }
+
+  .header {
+    background-color: inherit;
+  }
+
+  .nav li {
+    color: #000000;
+    display: inline;
+    font-size: 18px;
+    margin-right: 25px;
+    list-style-type: none;
+    text-transform: uppercase;
+  }
+
+  #login {
+    font-style: normal;
+      margin-left: 750px;
+    margin-top:30px;
+  }
+
+  #login label {
+    font-size: 18px;
+  }
+
+  #links {
+    text-align: left;
+    text-decoration: none;
+    color: darkorange;
+  }
+
+  #links hover {
+    color: firebrick;
+  }
+
+  .loginpage {
+
+    background-color: rgb(247, 171, 7);
+  {#    for browser wich cant suport rgba we add rgb#} background-color: rgba(247, 171, 7, 0.95);
+
+    padding: 20px 20px 15px 20px;
+    margin: 20px 70% 20px 20px;
+  }
+</style>
+<body>
+
+<div id="login">
+
+  <h1>Log in with your account</h1>
+  <img src="{% static 'login-add.png' %}" alt="page" style="width:100px;height:100px; margin-left:120px;">
+  <form class="loginpage" action="{%  url 'info_login' %}" method="post">
+    {% csrf_token %}
+    <div>
+      <label>
+        User name:
+      </label><br>
+      <input type="text" required autocomplete="off" name="username"/>
+    </div>
+    <div>
+      <label>
+        Password:
+      </label><br>
+      <input type="password" required autocomplete="off" name="password"/>
+    </div>
+    <br>
+    <input type="submit" value="Log in">
+  </form>
+</div>
+<br>
+<div id="links" style="margin-left:830px;">
+  <a href="/ChessAiSite_app/'login/" style'="font-family: 'Pangolin', cursive;">login</a>
+  <a href="/ChessAiSite_app/signup/" style="font-family: 'Pangolin', cursive;">Signup</a>
+  <a href="/ChessAiSite_app/" style="font-family: 'Pangolin', cursive;">Home</a>
+</div>
+{% if error %}<h3>{{ error }}</h3>{% endif %}
+</body>
+</html>
